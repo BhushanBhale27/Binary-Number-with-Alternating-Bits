@@ -1,0 +1,18 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var hasAlternatingBits = function(n) {
+    const binary = n.toString(2);
+   let cur = binary[0];
+   for(let i = 1; i < binary.length; i++){
+      const check = binary[i];
+      if(cur !== check){
+         cur = check;
+         continue;
+      };
+      return false;
+   };
+   return true;
+    
+};
