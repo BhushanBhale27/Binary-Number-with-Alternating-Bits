@@ -1,0 +1,42 @@
+//========== User's Code Starts Here ==========
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var hasAlternatingBits = function(n) {
+    let flag=1 
+while(n>0){
+  prev=n&1 
+  curr=(n>>1)&1 
+  if(prev^curr==0){
+    flag=0
+    return false;
+  }
+  n=n>>1 
+}
+if(flag==1){
+  return true;
+}
+    
+};
+
+//========== User's Code Ends Here ==========
+
+
+//Dont change anything below. If changed click on reset.
+async function readInput() {
+        let inputString = '';
+        var output=[];
+        process.stdin.on('data', inputStdin => {
+            inputString += inputStdin;
+            const inputArr = inputString.split(/(?:\r\n|\r|\n)/g)
+            output = hasAlternatingBits(parseInt(inputArr[0]));
+            console.log(output);
+            process.exit();
+            
+        })
+        
+
+}
+readInput();
